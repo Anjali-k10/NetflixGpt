@@ -4,17 +4,23 @@ import Header from "./Header";
 import { useSelector } from "react-redux";
 import MainContainer from "./MainContainer";
 import SecondaryContainer from "./SecondaryContainer";
+import usePopularMovies from "../hooks/usePopularMovies";
+import useUpcomingMovies from "../hooks/useUpcomingMovies";
+import useTrendingMovies from "../hooks/useTrendingMovies";
 // import { API_Options } from '../utils/constants';
 
 function Browse() {
   const user = useSelector((store) => store.user);
 
   const { handleSignOut } = useBrowse();
-  useNowPlayingMovies()
+  useNowPlayingMovies();
+  usePopularMovies();
+  useUpcomingMovies();
+  useTrendingMovies();
 
   return (
     <div>
-      <div className="flex justify-between">
+      <div className="flex justify-between ">
         <div className="w-3/4 h-4">
           <Header />
         </div>

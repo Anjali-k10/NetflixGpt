@@ -10,6 +10,7 @@ const useNowPlayingMovies = () => {
     const getNowPlayingMovies = async () => {
       try {
         const data = await fetch(
+          // 'https://api.themoviedb.org/3/movie/now_playing',
           'https://api.themoviedb.org/4/account/6824bcbd0ad432815431533b/movie/recommendations?page=1&language=en-US',
           API_Options
         );

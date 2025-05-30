@@ -6,7 +6,7 @@ import appStore from "./utils/appStore";
 
 const App = () => {
   return (
-    <div>
+    <div >
     <Provider store={appStore}><Body/></Provider>  
     </div>
   )
