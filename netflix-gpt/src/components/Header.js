@@ -31,7 +31,7 @@ const Header = () => {
     if (!loading) { 
       if (user.email !== null && (location.pathname === "/signup" || location.pathname === "/")) {
         navigate("/browse"); 
-        console.log("Navigated to browse");
+        // console.log("Navigated to browse");
       }
     }
   }, [user, navigate, loading, location]);
@@ -39,7 +39,7 @@ const Header = () => {
   if (loading) return <div className="text-white text-center mt-10">Loading...</div>;
   const imageHeight = location.pathname === "/browse" ? "h-12" : "w-48";
   return (
-    <div className='w-full px-8 py-2 absolute bg-gradient-to-b from-black z-10'>
+    <div className='w-full px-8 py-2 absolute bg-gradient-to-b from-black z-10 '>
       <img className={` ${imageHeight}`} src={NetflixLogo} alt='logo'/>
     </div>
   );
