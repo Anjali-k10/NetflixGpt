@@ -13,7 +13,7 @@ const Body = () => {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/browse" element={<Browse />} />
-        <Route path="/signup" element={<Signup />} />
+        {/* <Route path="/signup" element={<Signup />} /> */}
         <Route path="*" element={<NotFound />} />
       </Routes>
     </Router>
