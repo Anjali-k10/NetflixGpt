@@ -1,4 +1,4 @@
-import React from "react";
+ import React from "react";
 import { useSelector } from "react-redux";
 import MovieList from "./MovieList";
 
@@ -11,7 +11,7 @@ const GptMoviesSuggestion = () => {
       {movieNames.map((movieName, index) => (
         <div
           key={movieName}
-          className="bg-black bg-opacity-60 backdrop-blur-md rounded-xl shadow-lg p-6"
+          className="bg-[rgba(17,18,20,0.8)] bg-opacity-90 backdrop-blur-sm rounded-xl shadow-lg p-6"
         >
           <MovieList title={movieName} movies={movieResults[index]} />
         </div>
@@ -20,4 +20,5 @@ const GptMoviesSuggestion = () => {
   );
 };
 
-export default GptMoviesSuggestion;
+export default GptMoviesSuggestion; 
+

@@ -1,4 +1,3 @@
-
 import GptSearchBar from './GptSearchBar';
 import GptMoviesSuggestion from './GptMoviesSuggestion';
 import { backgroundImg } from '../utils/constants';
@@ -28,7 +27,6 @@ const GptSearchPage = () => {
         </div>
       )}
 
-      {/* Foreground */}
       <div className="relative z-10">
         <GptSearchBar />
         <GptMoviesSuggestion />
@@ -37,4 +35,4 @@ const GptSearchPage = () => {
   );
 };
 
-export default GptSearchPage;
+export default GptSearchPage;  

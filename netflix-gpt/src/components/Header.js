@@ -78,7 +78,8 @@ const Header = () => {
 
   return (
     <div className="fixed top-0 left-0 w-full px-8 py-2 bg-gradient-to-b from-black z-50 flex justify-between items-center">
-      <img className={`${logoSize}`} src={NetflixLogo} alt="logo" />
+    <img className={logoSize} src={NetflixLogo} alt="logo" />
+
 
       {user && (
         <div className="ml-auto flex items-center gap-4 pr-2">
@@ -121,4 +122,5 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header;  
+

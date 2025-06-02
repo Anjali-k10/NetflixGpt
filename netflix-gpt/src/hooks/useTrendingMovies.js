@@ -7,7 +7,7 @@ const useTrendingMovies = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const getNowPlayingMovies = async () => {
+    const getTrendingMovies = async () => {
       try {
         const data = await fetch(
           'https://api.themoviedb.org/3/movie/top_rated',
@@ -21,7 +21,7 @@ const useTrendingMovies = () => {
       }
     };
 
-    getNowPlayingMovies(); 
+    getTrendingMovies(); 
   }, [dispatch]); 
 };
 

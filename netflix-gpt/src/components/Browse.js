@@ -1,4 +1,4 @@
-import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
+  import useNowPlayingMovies from "../hooks/useNowPlayingMovies";
 import usePopularMovies from "../hooks/usePopularMovies";
 import useUpcomingMovies from "../hooks/useUpcomingMovies";
 import useTrendingMovies from "../hooks/useTrendingMovies";
@@ -36,6 +36,7 @@ function Browse() {
 }
 
 export default Browse;
+
 
 
 

@@ -1,4 +1,4 @@
-import React from "react";
+    import React from "react";
 import lang from "../utils/langConst";
 import useGptMovieSearch from "../hooks/useGptMovieSearch";
 
@@ -36,6 +36,6 @@ const GptSearchBar = () => {
   );
 };
 
-export default GptSearchBar;
+export default GptSearchBar;  
 
 

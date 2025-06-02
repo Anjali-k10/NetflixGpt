@@ -7,7 +7,7 @@ const useUpcomingMovies = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const getNowPlayingMovies = async () => {
+    const getUpcomingMovies = async () => {
       try {
         const data = await fetch(
           'https://api.themoviedb.org/3/movie/upcoming',
@@ -21,7 +21,7 @@ const useUpcomingMovies = () => {
       }
     };
 
-    getNowPlayingMovies();
+    getUpcomingMovies();
   }, [dispatch]); 
 };
 

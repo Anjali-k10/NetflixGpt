@@ -7,7 +7,7 @@ const usePopularMovies = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const getNowPlayingMovies = async () => {
+    const getPopularMovies = async () => {
       try {
         const data = await fetch(
           'https://api.themoviedb.org/3/movie/popular',
@@ -21,7 +21,7 @@ const usePopularMovies = () => {
       }
     };
 
-    getNowPlayingMovies();
+    getPopularMovies();
   }, [dispatch]); 
 };
 
