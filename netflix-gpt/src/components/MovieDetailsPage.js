@@ -1,38 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { IMG_CON_URL } from "../utils/constants";
-import { addMovieDetails,clearMovieDetails } from "../utils/movieSlice";
-import { API_Options } from "../utils/constants";
 import Loading from "./Loading";
+import useMovieDetails from "../hooks/useMovieDetails";
 
 const MovieDetailsPage = () => {
   const { movieId } = useParams();
-  const dispatch = useDispatch();
+  useMovieDetails(movieId);
+
   const movie = useSelector((state) => state.movies.movieDetails);
 
-  useEffect(() => {
-
-    dispatch(clearMovieDetails());
-
-    const getMovieDetails = async () => {
-      try {
-        const response = await fetch(
-          `https://api.themoviedb.org/3/movie/${movieId}`,
-          API_Options
-        );
-        const json = await response.json();
-        dispatch(addMovieDetails(json));
-      } catch (err) {
-        console.error("Failed to fetch movie details:", err);
-      }
-    };
-
-    getMovieDetails();
-  }, [movieId, dispatch]);
-
   if (!movie) return <Loading />;
-
 
   const {
     backdrop_path,
@@ -50,7 +29,7 @@ const MovieDetailsPage = () => {
   return (
     <div className="bg-black text-white min-h-screen p-8 text-lg">
       <div className="max-w-6xl mx-auto flex flex-col gap-10">
-
+        {/* Movie Image + Details */}
         <div className="flex flex-col md:flex-row gap-10 items-start">
           <img
             className="w-full max-w-lg rounded-xl object-cover shadow-lg"
@@ -67,9 +46,7 @@ const MovieDetailsPage = () => {
               <span className="border border-gray-500 rounded px-3 py-1 text-sm">
                 U/A 16+
               </span>
-              <span>
-                {Math.floor(runtime / 60)}h {runtime % 60}m
-              </span>
+              <span>{Math.floor(runtime / 60)}h {runtime % 60}m</span>
               <span>{original_language?.toUpperCase()}</span>
             </div>
 
@@ -79,7 +56,7 @@ const MovieDetailsPage = () => {
           </div>
         </div>
 
-     
+        {/* Genre + Overview */}
         <div className="m-4 text-xl text-gray-300 leading-relaxed max-w-6xl mx-auto">
           <div className="font-semibold text-white text-xl mb-2">{genreList}</div>
           <p>{overview}</p>
@@ -88,4 +65,6 @@ const MovieDetailsPage = () => {
     </div>
   );
 };
+
 export default MovieDetailsPage;
+
