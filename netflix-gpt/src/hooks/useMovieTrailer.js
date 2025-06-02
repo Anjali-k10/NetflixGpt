@@ -1,4 +1,4 @@
-import  { useEffect} from 'react'
+import { useEffect} from 'react'
 import { useDispatch } from 'react-redux'
 import { API_Options } from '../utils/constants'
 import { addTrailerVideo } from '../utils/movieSlice';

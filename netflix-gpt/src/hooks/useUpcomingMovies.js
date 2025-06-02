@@ -21,8 +21,8 @@ const useUpcomingMovies = () => {
       }
     };
 
-    getNowPlayingMovies(); // function defined + called inside useEffect
-  }, [dispatch]); // ✅ only dispatch is a real dependency
+    getNowPlayingMovies();
+  }, [dispatch]); 
 };
 
 export default useUpcomingMovies;

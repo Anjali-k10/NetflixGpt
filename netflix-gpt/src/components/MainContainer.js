@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 const MainContainer = () => {
   const movies = useSelector((store) => store.movies?.nowPlayingMovies);
 
-  if (!movies || movies.length === 0) return null; // ✅ Safely handle empty array
+  if (!movies || movies.length === 0) return null; 
 
   const mainMovie = movies[0];
   if (!mainMovie) return null;

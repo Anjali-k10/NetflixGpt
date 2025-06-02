@@ -12,13 +12,14 @@ const userSlice = createSlice({
   initialState,
   reducers: {
     addUser: (state, action) => {
-      return { ...action.payload }; // Updates the state with user info
+      return { ...action.payload }; 
     },
     removeUser: () => {
-      return initialState; // Resets to initial state when the user logs out
+      return initialState; 
     },
   },
 });
 
 export const { addUser, removeUser } = userSlice.actions;
 export default userSlice.reducer;
+

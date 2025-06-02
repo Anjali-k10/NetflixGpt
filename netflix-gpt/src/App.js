@@ -13,19 +13,3 @@ const App = () => {
 }
 
 export default App
-
-
-
-// const appRouter = createBrowserRouter([
-//    {
-//     "path":"/",
-//     "element": <Login/>
-//    },{
-//     "path":"/browse",
-//     "element":<Browse/>
-//    },
-//    {
-//     "path":"/signup",
-//     "element":<Signup/>
-//    }
-// ])
