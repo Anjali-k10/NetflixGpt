@@ -1,11 +1,11 @@
 import { addUpcomingMovies } from "../utils/movieSlice";
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { API_Options } from '../utils/constants';
 
 const useUpcomingMovies = () => {
   const dispatch = useDispatch();
-
+   const upcomingMovies = useSelector((store)=>store.movies.upcomingMovies)
   useEffect(() => {
     const getUpcomingMovies = async () => {
       try {
@@ -20,9 +20,11 @@ const useUpcomingMovies = () => {
         console.error("Failed to fetch movies:", err);
       }
     };
-
-    getUpcomingMovies();
-  }, [dispatch]); 
+  if (!upcomingMovies || upcomingMovies.length === 0) {
+      
+        getUpcomingMovies();
+    }
+  }, [dispatch,upcomingMovies]); 
 };
 
 export default useUpcomingMovies;

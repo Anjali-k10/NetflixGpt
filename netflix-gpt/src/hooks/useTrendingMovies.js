@@ -1,11 +1,11 @@
 import { addTrendingMovies } from "../utils/movieSlice";
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { API_Options } from '../utils/constants';
 
 const useTrendingMovies = () => {
   const dispatch = useDispatch();
-
+   const trendingMovies = useSelector((store)=>store.movies.trendingMovies)
   useEffect(() => {
     const getTrendingMovies = async () => {
       try {
@@ -20,9 +20,11 @@ const useTrendingMovies = () => {
         console.error("Failed to fetch movies:", err);
       }
     };
-
-    getTrendingMovies(); 
-  }, [dispatch]); 
+   if (!trendingMovies || trendingMovies.length === 0) {
+        getTrendingMovies(); 
+    }
+    
+  }, [dispatch,trendingMovies]); 
 };
 
 export default useTrendingMovies;
